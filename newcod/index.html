@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CODIGO</title>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <style>
+
+    }
+  }
+  </style>
+</head>
+
+<br>
+        <div class="container">
+        <h2>Linkpreview</h2>
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
+          Abrir Linkpreview
+        </button>
+
+        <!-- The Modal -->
+        <div class="modal" id="myModal1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+
+
+
+</script>
+
+</head>
+<head>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+  <script>
+
+    $(document).ready(function() {
+
+
+
+      $('#form1').on('submit', function(e) {
+
+        e.preventDefault();
+
+
+
+        var api_url = 'https://api.linkpreview.net'
+
+        var key = '5ccb98c7646b78e75a45ceb8c601666373ffead274763' // real
+
+        $.ajax({
+
+          url: api_url + "?key=" + key + "&q=" + $("#endereco").val(),
+
+          contentType: "application/json",
+
+          dataType: 'json',
+
+          success: function(result) {
+
+            $("#p1").text(result.title);
+
+            $("#p2").text(result.description);
+
+            $('#p3').attr('src', result.image);
+
+            $("#p4").text(result.url);
+
+          }
+
+        });
+
+
+
+      });
+
+
+
+    });
+
+  </script>
+
+</head>
+
+
+
+<body>
+
+
+
+  <h1>API</h1>
+
+
+
+  <form name="form1" id="form1">
+
+    URL:
+
+    <input type="text" id="endereco" name="endereco">
+
+    <br>
+
+    <input type="submit" value="ENVIAR">
+
+  </form>
+
+  <br><br>
+
+
+
+
+
+  <p id="p1"></p>
+
+  <p id="p2"></p>
+
+  <img id="p3" src="" />
+
+  <p id="p4"></p>
+
+
+
+</body>
+
+
+
+</html>
